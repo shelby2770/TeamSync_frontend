@@ -27,8 +27,13 @@
         />
       </div>
 
-      <button type="submit" class="w-full py-2 px-4 bg-blue-600 text-white">
-        Login
+      <button
+        type="submit"
+        class="w-full py-2 px-4 bg-blue-600 text-white"
+        [disabled]="isLoading"
+      >
+        <span *ngIf="isLoading">Logging in...</span>
+        <span *ngIf="!isLoading">Login</span>
       </button>
     </form>
   </div>

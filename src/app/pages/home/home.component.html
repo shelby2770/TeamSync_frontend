@@ -1,7 +1,13 @@
 <div class="min-h-screen">
-    <div class="flex items-center justify-center min-h-screen">
-        <div class="text-center">
-            <h1 class="text-3xl font-bold">Please login to get access</h1>
-        </div>
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="text-center">
+      <div *ngIf="user !== null; else restrictUser">
+        <h1 class="text-3xl font-bold mb-4">Welcome {{ user.name }}!</h1>
+        <p class="text-gray-600">{{ user.email }}</p>
+      </div>
+      <ng-template #restrictUser>
+        <h1 class="text-3xl font-bold">Please login to get access</h1>
+      </ng-template>
     </div>
+  </div>
 </div>

@@ -4,8 +4,26 @@
       <a routerLink="/">TeamSync</a>
     </div>
     <div class="space-x-10">
-      <a routerLink="/login">Log In</a>
-      <a routerLink="/signup">Sign Up</a>
+      <a
+        *ngIf="!isLoggedIn"
+        routerLink="/login"
+        routerLinkActive="!text-red-500 underline"
+        class="mr-4"
+        >Log In</a
+      >
+      <a
+        *ngIf="!isLoggedIn"
+        routerLink="/signup"
+        routerLinkActive="!text-red-500 underline"
+        >Sign Up</a
+      >
+      <button
+        *ngIf="isLoggedIn"
+        (click)="logout()"
+        class="text-white hover:text-red-400"
+      >
+        Logout
+      </button>
     </div>
   </div>
 </nav>
