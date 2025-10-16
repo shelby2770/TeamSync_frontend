@@ -34,7 +34,7 @@ export class LoginComponent {
             this.isLoading = false;
           },
           error: (error) => {
-            alert('Login failed: ' + (error.error || 'Invalid credentials'));
+            alert('Login failed: ' + error.message);
             this.isLoading = false;
           },
         });

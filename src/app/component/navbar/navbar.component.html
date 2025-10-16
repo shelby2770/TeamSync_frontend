@@ -3,12 +3,11 @@
     <div class="text-xl font-bold">
       <a routerLink="/">TeamSync</a>
     </div>
-    <div class="space-x-10">
+    <div class="space-x-6">
       <a
         *ngIf="!isLoggedIn"
         routerLink="/login"
         routerLinkActive="!text-red-500 underline"
-        class="mr-4"
         >Log In</a
       >
       <a
@@ -17,13 +16,26 @@
         routerLinkActive="!text-red-500 underline"
         >Sign Up</a
       >
-      <button
+
+      <a
         *ngIf="isLoggedIn"
-        (click)="logout()"
-        class="text-white hover:text-red-400"
+        routerLink="/create-project"
+        routerLinkActive="!text-red-500 underline"
+        >Create Project</a
       >
-        Logout
-      </button>
+      <a
+        *ngIf="isLoggedIn"
+        routerLink="/my-projects"
+        routerLinkActive="!text-red-500 underline"
+        >My Projects</a
+      >
+      <a
+        *ngIf="isLoggedIn"
+        routerLink="/notifications"
+        routerLinkActive="!text-red-500 underline"
+        >Notifications</a
+      >
+      <button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
     </div>
   </div>
 </nav>
